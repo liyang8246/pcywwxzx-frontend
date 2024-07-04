@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广二师电脑义务维修中心</title>
+    <link href="./output.css" rel="stylesheet">
+    <script defer src="./alpine.js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white max-w-sm w-full min-h-96 h-fit rounded-lg shadow-lg">
+        <h2 class="font-bold text-2xl text-center mt-4 focus:outline-none">电脑义务维修中心预约</h2>
+        <div class="flex justify-between p-4 border-b border-gray-100 pb-2 mb-4 focus:outline-none"></div>
+
+        <label class="input input-bordered flex items-center gap-2 mx-8 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a5 5 0 1 1-5 5l.005-.217A5 5 0 0 1 12 2m2 12a5 5 0 0 1 5 5v1a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-1a5 5 0 0 1 5-5z"/></svg>
+            <input type="text" class="grow" placeholder="姓名" />
+        </label>
+        <label class="input input-bordered flex items-center gap-2 mx-8 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="currentColor" d="M22 10v6a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4v-6zM7.01 14H7a1 1 0 1 0 .01 2a1 1 0 0 0 0-2M13 14h-2a1 1 0 0 0 0 2h2a1 1 0 0 0 0-2m5-10a4 4 0 0 1 4 4H2a4 4 0 0 1 4-4z"/></svg>
+            <input type="text" class="grow" placeholder="学号" />
+        </label>
+        <label class="input input-bordered flex items-center gap-2 mx-8 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0-4 0m-2 8v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1M15 5a2 2 0 1 0 4 0a2 2 0 0 0-4 0m2 5h2a2 2 0 0 1 2 2v1M5 5a2 2 0 1 0 4 0a2 2 0 0 0-4 0m-2 8v-1a2 2 0 0 1 2-2h2"/></svg>
+            <input type="text" class="grow" placeholder="班级" />
+        </label>
+        <label class="input input-bordered flex items-center gap-2 mx-8 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="currentColor"><path d="M16 2a1 1 0 0 1 .993.883L17 3v1h1a3 3 0 0 1 2.995 2.824L21 7v12a3 3 0 0 1-2.824 2.995L18 22H6a3 3 0 0 1-2.995-2.824L3 19V7a3 3 0 0 1 2.824-2.995L6 4h1V3a1 1 0 0 1 1.993-.117L9 3v1h6V3a1 1 0 0 1 1-1m3 7H5v9.625c0 .705.386 1.286.883 1.366L6 20h12c.513 0 .936-.53.993-1.215l.007-.16z"/><path d="M12 12a1 1 0 0 1 .993.883L13 13v3a1 1 0 0 1-1.993.117L11 16v-2a1 1 0 0 1-.117-1.993L11 12z"/></g></svg>
+            <input type="date" id="app-time" name="app-time" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="班级">
+        </label>
+        <textarea class="textarea textarea-bordered flex gap-2 mx-8 mb-4 w-80 h-40" placeholder="详细问题描述"></textarea>
+        <div class="flex justify-around mx-8">
+            <div class="form-control mr-8">
+                <label class="label cursor-pointer">
+                    <span class="label-text mr-4 text-1xl font-bold">我已阅读用户协议</span>
+                    <input type="checkbox" class="checkbox" />
+                </label>
+            </div>
+            <button class="btn ml-8" x-on:click="">提交预约</button>
+        </div>
+        <div class="flex justify-between p-4 border-b border-gray-100 pb-2 mb-4 focus:outline-none"></div>
+        <div class="text-center mb-4 text-xs">广东第二师范学院电脑义务维修中心</div>
+    </div>
+
+    <script>
+        function init_data() {
+        }
+    </script>
+</body>
+</html>
