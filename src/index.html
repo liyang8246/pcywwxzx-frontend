@@ -8,7 +8,7 @@
     <script defer src="./alpine.js"></script>
     <script src="./main.js"></script>
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
     <form class="bg-white max-w-sm w-full min-h-96 h-fit rounded-lg shadow-lg" x-data="appointmentForm">
         <h2 class="font-bold text-2xl text-center mt-4 focus:outline-none">电脑义务维修中心预约</h2>
         <div class="flex justify-between p-4 border-b border-gray-100 pb-2 mb-4 focus:outline-none"></div>
@@ -30,10 +30,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="currentColor"><path d="M16 2a1 1 0 0 1 .993.883L17 3v1h1a3 3 0 0 1 2.995 2.824L21 7v12a3 3 0 0 1-2.824 2.995L18 22H6a3 3 0 0 1-2.995-2.824L3 19V7a3 3 0 0 1 2.824-2.995L6 4h1V3a1 1 0 0 1 1.993-.117L9 3v1h6V3a1 1 0 0 1 1-1m3 7H5v9.625c0 .705.386 1.286.883 1.366L6 20h12c.513 0 .936-.53.993-1.215l.007-.16z"/><path d="M12 12a1 1 0 0 1 .993.883L13 13v3a1 1 0 0 1-1.993.117L11 16v-2a1 1 0 0 1-.117-1.993L11 12z"/></g></svg>
             <input type="date" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="预约时间" x-model="reswithverifycode.response.app_time" />
         </label>
-        <label
-            class="input input-bordered flex items-center gap-2 mx-8 mb-4"
-            x-init="getVerifyCode()"
-        >
+        <label class="input input-bordered flex items-center gap-2 mx-8 mb-4" x-init="getVerifyCode()">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20.925 13.163A8.998 8.998 0 0 0 12 3a9 9 0 0 0 0 18M9 10h.01M15 10h.01"/><path d="M9.5 15c.658.64 1.56 1 2.5 1s1.842-.36 2.5-1m.5 4l2 2l4-4"/></g></svg>
             <input type="text" class="grow" placeholder="验证码" x-model="reswithverifycode.verifycode" :style="'background-image: url(' + reswithverifycode.verifycode_url + '); background-size: contain; background-position: right; background-repeat: no-repeat;'" />
         </label>
@@ -45,10 +42,20 @@
                     <input type="checkbox" class="checkbox" />
                 </label>
             </div>
-            <button class="btn ml-8" x-on:click.prevent="submitForm()">提交预约</button>
+            <button class="btn ml-8" x-on:click.prevent="validateInput()">提交预约</button>
         </div>
-        <div class="flex justify-between p-4 border-b border-gray-100 pb-2 mb-4 focus:outline-none"></div>
-        <div class="text-center mb-4 text-xs">广东第二师范学院电脑义务维修中心</div>
+        <div role="alert" x-show="inputError" x-transition class="alert alert-error items-center mt-4 ml-8 w-80 rounded-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span x-text="inputError"></span>
+        </div>
+        <div class="my-6"></div>
     </form>
+    <div class="mt-8 flex">
+        <button class="hover:bg-white hover:shadow-sm rounded-lg px-2 py-2">广二师电脑义务维修中心</button>
+        <div class="px-2 py-2">|</div>
+        <button class="hover:bg-white hover:shadow-sm rounded-lg px-2 py-2">后台管理</button>
+    </div>
 </body>
 </html>
