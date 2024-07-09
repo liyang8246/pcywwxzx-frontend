@@ -1,4 +1,6 @@
 node_modules/
+src/alpine.js
+src/output.css
 package-lock.json
 *~
 .DS_Store
