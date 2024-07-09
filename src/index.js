@@ -4,16 +4,20 @@ document.addEventListener('alpine:init', () => {
             verifycode: '',
             verifycode_url: '',
             response: {
+                id: null,
                 uid: '',
                 name: '',
                 class: '',
                 problem: '',
                 reg_time: null,
-                app_time: ''
+                app_time: '',
+                closed: null,
+                closed_time: null,
             },
         },
         inputError: false,
         submitForm() {
+            this.reswithverifycode.response.app_time = this.reswithverifycode.response.app_time + "T00:00:00.000000000"
             fetch('http://eromanga.top:5800/api/issue', {
                 method: 'PUT',
                 headers: {
@@ -27,7 +31,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         getVerifyCode() {
-            fetch('http://eromanga.top:5800/api/verifycode?_='+Date.now())
+            fetch('http://eromanga.top:5800/api/verifycode?_=' + Date.now())
                 .then(response => response.text())
                 .then(text => { this.reswithverifycode.verifycode_url = text })
         },
@@ -35,11 +39,11 @@ document.addEventListener('alpine:init', () => {
         validateInput() {
             const response = this.reswithverifycode.response;
             this.inputError = false;
-            if (response.uid.length != 11)  this.inputError = "学号必须为11位";
-            if (response.name.length < 2)  this.inputError = "姓名必须大于2位";
-            if (response.name.length > 4)  this.inputError = "姓名必须小于4位";
-            if (response.class.length < 5)  this.inputError = "班级必须大于6位";
-            if (response.problem.length < 2)  this.inputError = "问题必须大于2位";
+            if (response.uid.length != 11) this.inputError = "学号必须为11位";
+            if (response.name.length < 2) this.inputError = "姓名必须大于2位";
+            if (response.name.length > 4) this.inputError = "姓名必须小于4位";
+            if (response.class.length < 5) this.inputError = "班级必须大于6位";
+            if (response.problem.length < 2) this.inputError = "问题必须大于2位";
             if (response.reg_time && response.app_time) {
                 const reg_time = new Date(response.reg_time);
                 const app_time = new Date(response.app_time);
