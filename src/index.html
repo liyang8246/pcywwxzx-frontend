@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>广二师电脑义务维修中心</title>
+    <link rel="shortcut icon" href="./favicon.ico">
     <link href="./output.css" rel="stylesheet">
     <script defer src="./alpine.js"></script>
     <script src="./index.js"></script>
@@ -38,17 +39,23 @@
         <div class="flex justify-around mx-8">
             <div class="form-control mr-8">
                 <label class="label cursor-pointer">
-                    <span class="label-text mr-4 text-1xl font-bold">我已阅读用户协议</span>
-                    <input type="checkbox" class="checkbox" />
+                    <span class="label-text mr-4 text-1xl font-bold">如意外修坏无赔偿</span>
+                    <input x-model="userAgreement" type="checkbox" class="checkbox" />
                 </label>
             </div>
             <button class="btn ml-8" x-on:click.prevent="validateInput()">提交预约</button>
         </div>
-        <div role="alert" x-show="inputError" x-transition class="alert alert-error items-center mt-4 ml-8 w-80 rounded-lg">
+        <div role="alert" x-show="error" x-transition class="alert alert-error items-center my-4 ml-8 w-80 rounded-lg bg-red-300">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span x-text="inputError"></span>
+            <span x-text="error"></span>
+        </div>
+        <div role="alert" x-show="info" class="alert alert-success items-center my-4 ml-8 w-80 rounded-lg bg-green-300">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span x-text="info"></span>
         </div>
         <div class="my-6"></div>
     </form>
