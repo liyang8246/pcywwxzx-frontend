@@ -58,10 +58,11 @@
                 </div>
                 <div class="collapse-content">
                     <div class="border-b mb-2"></div>
+                    <p class="text-sm" x-text="'学生学号 : ' + issue.uid"></p>
                     <p class="text-sm" x-text="'所在班级 : ' + issue.class"></p>
-                    <p class="text-sm" x-text="'提交时间 : ' + issue.reg_time.replace('T', ' ')"></p>
+                    <p class="text-sm" x-text="('提交时间 : ' + issue.reg_time.replace('T', ' ')).slice(0, 23)"></p>
                     <template x-if="issue.closed_time">
-                        <p class="text-sm" x-text="'完成时间 : ' + issue.closed_time.replace('T', ' ')"></p>
+                        <p class="text-sm" x-text="('完成时间 : ' + issue.closed_time.replace('T', ' ')).slice(0, 23)"></p>
                     </template>
                     <div class="text-sm" x-text="'问题描述 : ' + issue.problem"></div>
                     <div class="border-b mt-2 mb-4"></div>
