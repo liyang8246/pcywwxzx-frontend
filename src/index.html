@@ -35,7 +35,9 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20.925 13.163A8.998 8.998 0 0 0 12 3a9 9 0 0 0 0 18M9 10h.01M15 10h.01"/><path d="M9.5 15c.658.64 1.56 1 2.5 1s1.842-.36 2.5-1m.5 4l2 2l4-4"/></g></svg>
             <input type="text" class="grow" placeholder="验证码" x-model="reswithverifycode.verifycode" :style="'background-image: url(' + reswithverifycode.verifycode_url + '); background-size: contain; background-position: right; background-repeat: no-repeat;'" />
         </label>
-        <textarea class="textarea textarea-bordered flex gap-2 mx-8 mb-4 w-80 h-40" placeholder="详细问题描述" x-model="reswithverifycode.response.problem"></textarea>
+        <div class="form-control w-full mb-4">
+            <textarea class="textarea textarea-bordered h-40 w-max mx-8 flex items-center gap-2 px-0" placeholder="详细问题描述" x-model="reswithverifycode.response.problem"></textarea>
+        </div>
         <div class="flex justify-around mx-8">
             <div class="form-control mr-8">
                 <label class="label cursor-pointer">
