@@ -5,7 +5,7 @@ document.addEventListener('alpine:init', () => {
         pass: false,
         reswithverifycode: [],
         get_issue() {
-            const url = `https://eromanga.top:5800/api/issue?passwd=${this.passwd}`;
+            const url = `https://pcywwxzx.eromanga.top:4443.top:4443/api/issue?passwd=${this.passwd}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
@@ -21,7 +21,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         toggle_issue(id) {
-            const url = `https://eromanga.top:5800/api/issue?passwd=${this.passwd}&id=${id}`;
+            const url = `https://pcywwxzx.eromanga.top:4443/api/issue?passwd=${this.passwd}&id=${id}`;
             fetch(url,
                 { method: 'POST' }
             )
@@ -30,7 +30,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         del_issue(id) {
-            const url = `https://eromanga.top:5800/api/issue?passwd=${this.passwd}&id=${id}`;
+            const url = `https://pcywwxzx.eromanga.top:4443/api/issue?passwd=${this.passwd}&id=${id}`;
             fetch(url,
                 { method: 'DELETE' }
             )

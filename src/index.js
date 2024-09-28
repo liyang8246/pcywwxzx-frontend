@@ -28,7 +28,7 @@ document.addEventListener('alpine:init', () => {
             if (this.reswithverifycode.response.app_time.length < 20) {
                 this.reswithverifycode.response.app_time = this.reswithverifycode.response.app_time + "T00:00:00.000000000"
             }
-            fetch('https://eromanga.top:5800/api/issue', {
+            fetch('https://pcywwxzx.eromanga.top:4443/api/issue', {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ document.addEventListener('alpine:init', () => {
         },
 
         getVerifyCode() {
-            fetch('https://eromanga.top:5800/api/verifycode?_=' + Date.now())
+            fetch('https://pcywwxzx.eromanga.top:4443/api/verifycode?_=' + Date.now())
                 .then(response => response.text())
                 .then(text => { this.reswithverifycode.verifycode_url = text })
         },
