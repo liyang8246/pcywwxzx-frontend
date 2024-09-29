@@ -5,7 +5,7 @@ document.addEventListener('alpine:init', () => {
         pass: false,
         reswithverifycode: [],
         get_issue() {
-            const url = `https://pcywwxzx.eromanga.top:4443.top:4443/api/issue?passwd=${this.passwd}`;
+            const url = `https://pcywwxzx.eromanga.top:4443/api/issue?passwd=${this.passwd}`;
             fetch(url)
                 .then(response => response.json())
                 .then(data => {
