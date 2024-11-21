@@ -15,7 +15,7 @@ document.addEventListener('alpine:init', () => {
                 closed_time: null,
             },
         },
-        error: '',
+        error: '目前服务器维护中,请直接7点前往值班室',
         info: '',
         userAgreement: false,
         submitForm() {
@@ -61,6 +61,7 @@ document.addEventListener('alpine:init', () => {
 
         validateInput() {
             const response = this.reswithverifycode.response;
+            console.log(response);
             this.error = false;
             if (response.uid.length != 11) this.error = "学号必须为11位";
             if (response.name.length < 2) this.error = "姓名必须大于2位";
