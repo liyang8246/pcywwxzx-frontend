@@ -15,7 +15,7 @@ document.addEventListener('alpine:init', () => {
                 closed_time: null,
             },
         },
-        error: '目前服务器维护中,请直接7点前往值班室',
+        error: '',
         info: '',
         userAgreement: false,
         submitForm() {
