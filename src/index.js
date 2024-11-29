@@ -15,7 +15,7 @@ document.addEventListener('alpine:init', () => {
                 closed_time: null,
             },
         },
-        error: '',
+        error: '网站正在升级中',
         info: '',
         userAgreement: false,
         submitForm() {
